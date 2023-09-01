@@ -1,0 +1,18 @@
+# Obtenemos la ultima imagen de alpine linux
+FROM node:alpine AS development
+
+# Declaramos nuestro entorno de desarrollo
+ENV NODE_ENV development
+
+# Agregamos nuestro directorio de trabajo
+WORKDIR /react-app
+
+# Instalación de dependencias
+COPY ./package.json /react-app
+RUN npm install
+
+# Copiar todos los archivos al proyecto en ejecución
+COPY . .
+
+# Iniciamos nuestro proyecto
+CMD npm start
