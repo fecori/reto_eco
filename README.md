@@ -1,21 +1,21 @@
 # Para iniciar Reactjs con docker
 
-## Compilar imagen
+### Compilar imagen
 docker build -f Dockerfile.dev -t react_eco .
 
-## Iniciamos el contenedor
+### Iniciamos el contenedor
 docker run -p 3000:3000 react_eco:latest
 
-## Verificamos que este creado el contenedor
+### Verificamos que este creado el contenedor
 docker container ps
 
 # Iniciar Reactjs sin docker
 
-## Instamalos las dependencias npm
+### Instamalos las dependencias npm
 npm install
 
-## Iniciamos el proyecto
+### Iniciamos el proyecto
 npm run start
 
-## Se inicia automaticamente en el navegador con la siguiente url
+### Se inicia automaticamente en el navegador con la siguiente url
 [http://localhost:3000](http://localhost:3000)
