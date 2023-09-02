@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import './scss/App.scss';
-import SliderComp from "./components/slider";
 import axios from "axios";
+import React, {useEffect, useState} from 'react';
+import SliderComp from "./components/slider";
 import Listado from "./components/lista";
+import './scss/App.scss';
 
 function App() {
     const [getSlider, setSlider] = useState();
@@ -32,17 +32,17 @@ function App() {
                     <div className="container-eco__header-logo">
                         <div className="container-eco__logo text-red-600 text-5xl">globoplay</div>
                     </div>
-                    <SliderComp data={getSlider} type="home" items={1}/>
+                    <SliderComp data={getSlider} type="home"/>
                 </div>
                 <div className="w-full sm:w-2/3 md:w-2/4 px-2 mb-2.5">
-                    <div className="container-eco__header-boton hidden md:block">
+                    <div className="container-eco__header-boton hidden-m">
                         <button
                             className="w-32 rounded-md bg-red-600 hover:bg-red-400 text-white text-xs font-bold shadow-sm px-3.5 py-2.5">Ver
                             más
                         </button>
                     </div>
-                    <SliderComp data={getSliderNotes} type="single" items={3}/>
-                    <div className="container-eco__header-boton md:invisible">
+                    <SliderComp data={getSliderNotes} type="single"/>
+                    <div className="container-eco__header-boton hidden-d">
                         <button
                             className="w-full rounded-md bg-red-600 hover:bg-red-400 text-white text-xs font-bold shadow-sm px-3.5 py-2.5">Ver
                             más

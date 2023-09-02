@@ -5,6 +5,22 @@
     line-height: 64px;
   }
 
+  @media screen and (min-width: 768px) {
+    * .hidden-d,
+    .hidden-d,
+    .hidden-d > * {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    * .hidden-m,
+    .hidden-m,
+    .hidden-m > * {
+      display: none;
+    }
+  }
+
   &__header {
 
     &-logo,
@@ -113,20 +129,25 @@
           height: 4px;
           padding-left: 2px;
           padding-right: 2px;
+          text-align: center;
 
           &.slick-active {
             button {
-              --tw-bg-opacity: 1;
+              width: 100%;
               background-color: hsla(0, 0%, 100%, 1);
             }
           }
 
           button {
-            width: 100%;
+            width: 60%;
             height: 4px;
             background: hsla(0, 0%, 100%, .5);
             text-indent: -9000px;
             border-radius: 3px;
+
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transition-duration: .15s;
           }
         }
       }

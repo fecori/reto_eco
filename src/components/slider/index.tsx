@@ -1,10 +1,8 @@
-import {
-    useRef
-} from "react";
-import {generateUUID} from "../../utils/getUUID";
+import {useRef} from "react";
 import Slider from "react-slick";
+import {generateUUID} from "../../utils/getUUID";
 
-const SliderComp = ({data, type, items = 1}: { data: any, type: string, items: number }) => {
+const SliderComp = ({data, type}: { data?: any, type?: string }) => {
     let _classType = 'default';
     const uuidRef = useRef(generateUUID());
     const sliderRef = useRef(null);
@@ -17,10 +15,12 @@ const SliderComp = ({data, type, items = 1}: { data: any, type: string, items: n
     }
 
     const NextArrow = ({className, style, onClick}: { className?: any, style?: any, onClick?: any }) => {
-        return <button className="slick-arrow slick-arrow__next" onClick={onClick}><i className="fas fa-chevron-right"/></button>
+        return <button className="slick-arrow slick-arrow__next" onClick={onClick}><i className="fas fa-chevron-right"/>
+        </button>
     }
     const PrevArrow = ({className, style, onClick}: { className?: any, style?: any, onClick?: any }) => {
-        return <button className="slick-arrow slick-arrow__prev" onClick={onClick}><i className="fas fa-chevron-left"/></button>
+        return <button className="slick-arrow slick-arrow__prev" onClick={onClick}><i className="fas fa-chevron-left"/>
+        </button>
     }
 
     if (data) {
@@ -50,7 +50,7 @@ const SliderComp = ({data, type, items = 1}: { data: any, type: string, items: n
                 </div>
             }
         };
-        // console.log('sliderRef', sliderRef)
+
         return <div id={uuidRef.current} className={`container-eco__slider container-eco__${_classType}`}>
             <Slider ref={sliderRef} {...settings}>
                 {data.map((item: any, key: number) => {
